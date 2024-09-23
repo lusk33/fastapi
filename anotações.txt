@@ -1,0 +1,26 @@
+# inicializa o poetry e suas dependencias
+poetry shell
+
+# cria grupo de recursos de dev 
+poetry add --group dev pytest pytest-cov taskipy ruff httpx
+
+
+# incia o fastapi
+fastapi dev fast_zero/app.py
+
+# identifica erros de formatação
+task lint
+
+# Formata código
+task format
+
+##### Testes
+
+# realiza testes
+task test
+
+# posta um teste em html
+task post_test
+
+# inicia server para podermos acessar teste
+http-server
